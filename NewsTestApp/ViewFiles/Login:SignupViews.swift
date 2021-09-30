@@ -25,7 +25,7 @@ protocol PostOption{
 class FirstViewController: UIViewController,  blackViewProtocol, SelectedLoginOption {
     let realmObjc = try! Realm()
     let appleProvider = AppleSignInClient()
-    let item = 6
+    let item = 2
     var timer =  Timer()
 
     
@@ -306,12 +306,12 @@ class FirstViewController: UIViewController,  blackViewProtocol, SelectedLoginOp
 
 extension FirstViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDelegate, UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 6
+        return 3
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let topics = ["Technology", "Sports", "Entertainment", "Politics", "Buisness", "More"]
-        let topicImg = ["TechnologyIntro", "SportsIntro", "EntertainmentIntro", "PoliticsIntro", "BuisnessIntro", "MoreIntro"]
+        let topics = ["Technology", "Sports", "More"]
+        let topicImg = ["TechnologyIntro", "SportsIntro", "EntertainmentIntro"]
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FirstViewCells", for: indexPath) as! FirstViewCells
         cell.tag = indexPath.row
         if cell.tag == indexPath.row{
